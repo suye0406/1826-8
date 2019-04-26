@@ -31,7 +31,7 @@
                 <tbody>
                 <tr v-for="(item,index) in List">
                     <th scope="row"style="width: 10px;">{{index+1}}</th>
-                    <th>{{item.goods_title}}</th>
+                    <th style="line-height: 20px;">{{item.goods_title}}</th>
                     <th style="width: 50px;height: 100px">
                         <img :src="item.thumbnail" alt=""width="100%"height="100%">
                     </th>
