@@ -1,4 +1,4 @@
-# recrpt
+# reception
 
 ## Project setup
 ```
