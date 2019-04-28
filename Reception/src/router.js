@@ -11,17 +11,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
-      children:[
-        {
-          // 当 /user/:id/profile 匹配成功，
-          // UserProfile 会被渲染在 User 的 <router-view> 中
-          path: 'chome',
-          name:'CHome',
-          component: CHome
-        }
-      ]
+      name: 'Chome',
+      component: CHome,
+      // children:[
+      //   {
+      //     // 当 /user/:id/profile 匹配成功，
+      //     // UserProfile 会被渲染在 User 的 <router-view> 中
+      //     path: 'chome',
+      //     name:'CHome',
+      //     component: CHome
+      //   }
+      // ]
     },
     {
       path: '/about',
