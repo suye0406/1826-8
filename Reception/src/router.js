@@ -37,7 +37,7 @@ export default new Router({
         name: 'chome',
         component: CHome
     },{
-        path: '/shopdetails',
+        path: '/shopdetails/:id',
         name: 'ShopDetails',
         component: ShopDetails
     },
