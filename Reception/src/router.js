@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import CHome from '@/components/home/Home'
+import ShopDetails from '@/components/public/shopDetails/shopDetails'
 
 Vue.use(Router)
 
@@ -31,10 +32,14 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
-      {
-          path: '/chome',
-          name: 'chome',
-          component: CHome
-      },
+    {
+        path: '/chome',
+        name: 'chome',
+        component: CHome
+    },{
+        path: '/shopdetails',
+        name: 'ShopDetails',
+        component: ShopDetails
+    },
   ]
 })
