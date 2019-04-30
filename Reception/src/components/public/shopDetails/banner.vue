@@ -4,13 +4,7 @@
         <div class="swiper-container"style="width: 100%;height: 100%;">
             <div class="swiper-wrapper"style="width: 100%;height: 100%;">
                 <div class="swiper-slide"style="width: 100%;height: 100%;">
-                    <img src="https://imgs-qn.iliangcang.com/ware/upload/orig/2/436/436375.jpg" alt=""style="width: 100%;height: 100%;"width="100%"height="100%">
-                </div>
-                <div class="swiper-slide"style="width: 100%;height: 100%;">
-                    <img src="https://imgs-qn.iliangcang.com/ware/upload/orig/2/436/436382.jpg" alt=""style="width: 100%;height: 100%;"width="100%"height="100%">
-                </div>
-                <div class="swiper-slide"style="width: 100%;height: 100%;">
-                    <img src="https://imgs-qn.iliangcang.com/ware/upload/orig/2/436/436383.jpg" alt=""style="width: 100%;height: 100%;"width="100%"height="100%">
+                    <img src="" alt=""style="width: 100%;height: 100%;"width="100%"height="100%">
                 </div>
             </div>
             <!-- Add Pagination -->
@@ -28,11 +22,13 @@
         name: "banner",
         data(){
             return{
-
+                imgTitl:'http://39.96.76.3/HuiWanZhong/public/uploads/',
+                banner:[],
             }
         },
         created() {
-
+            this.banner = JSON.parse(sessionStorage.getItem('shopList'));
+            console.log(this.banner);
         },
         mounted() {
             var swiper = new Swiper('.swiper-container', {

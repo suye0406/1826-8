@@ -5,7 +5,7 @@
             <p>新品速递</p>
         </div>
         <div class="box">
-            <!--<input type="button" @click="sum({a:$refs.a.value,b:$refs.b.value})"  value="=">-->
+            <!--<div class="kuai" v-for="(item,index) in list"@click="shop(index,item)">-->
             <div class="kuai" v-for="(item,index) in list"@click="shop(index,item)">
                 <div>
                     <img :src="imgTitl+item.thumbnail" alt=""width="100%"height="100%"style="width: 100%;height: 100%;">
@@ -33,13 +33,14 @@
                 imgTitl:'http://39.96.76.3/HuiWanZhong/public/uploads/',
                 list:[],
             }
+        },mounted(){
         },
         created() {
             this.new();
         },
         methods:{
             new(){
-                axios.get('/r_new', {
+                axios.get('api/r_new', {
                     params: {
                     },
                 }).then(response =>{
@@ -49,7 +50,8 @@
                 });
             },
             shop(index,item){
-                this.$router.push({name: 'ShopDetails', params: {id:item.id}});
+                this.$router.push({name: 'ShopDetails', params: {goods_id:item.id}});
+                // this.$store.dispatch('shop',{item});
             }
         }
     }

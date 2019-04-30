@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import CHome from '@/components/home/Home'
 import ShopDetails from '@/components/public/shopDetails/shopDetails'
+import Serach_list from '@/components/public/serach_list'
+import My from '@/components/my/my'
+import Cart from '@/components/cart/cart'
 
 Vue.use(Router)
 
@@ -37,9 +40,21 @@ export default new Router({
         name: 'chome',
         component: CHome
     },{
-        path: '/shopdetails/:id',
+        path: '/shopdetails/:goods_id',
         name: 'ShopDetails',
         component: ShopDetails
+    },{
+        path: '/serach_list',
+        name: 'Serach_list.vue',
+        component: Serach_list
+    },{
+        path: '/my',
+        name: 'my',
+        component: My
+    },{
+        path: '/cart',
+        name: 'cart',
+        component: Cart
     },
   ]
 })

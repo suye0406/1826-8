@@ -7,6 +7,7 @@ module.exports = {
         proxy: {
             '/api': {
                 target: 'http://10.9.71.195:8082',  // target host
+                // target: 'http://192.168.43.143:8082',  // target host
                 ws: true,  // proxy websockets
                 changeOrigin: true,  // needed for virtual hosted sites
                 pathRewrite: {

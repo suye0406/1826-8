@@ -30,7 +30,7 @@
         },
         methods:{
             fication(){
-                axios.get('/fication', {
+                axios.get('api/fication', {
                     params: {
                     },
                 }).then(response =>{

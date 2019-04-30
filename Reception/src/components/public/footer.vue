@@ -1,26 +1,26 @@
 <template>
     <div id="Footer">
-        <div>
-            <p class="el-icon-s-shop"></p>
-            <p>
+        <div @click="switchRouter('/')">
+            <p class="el-icon-s-shop":style="coler"></p>
+            <p :style="coler">
                 商店
             </p>
         </div>
-        <div>
-            <p class="el-icon-menu"></p>
-            <p>
+        <div @click="switchTo('/')">
+            <p class="el-icon-menu":style="coler2"></p>
+            <p :style="coler2">
                 分类
             </p>
         </div>
-        <div>
-            <p class="el-icon-shopping-cart-full"></p>
-            <p>
+        <div @click="switchRouter('/cart')">
+            <p class="el-icon-shopping-cart-full":style="coler3"></p>
+            <p :style="coler3">
                 购物车
             </p>
         </div>
-        <div>
-            <p class="el-icon-user"></p>
-            <p>
+        <div @click="switchRouter('/my')">
+            <p class="el-icon-user" :style="coler4"></p>
+            <p :style="coler4">
                 个人
             </p>
         </div>
@@ -29,7 +29,51 @@
 
 <script>
     export default {
-        name: "footer"
+        name: "footer",
+        data(){
+            return{
+                coler:{
+                    color:'black',
+                },
+                coler2:{
+                    color:'',
+                },
+                coler3:{
+                    color:'',
+                },
+                coler4:{
+                    color:'',
+                }
+            }
+        },
+        methods:{
+            switchRouter(path){
+                // black
+                this.$router.push(path);
+                switch(path)
+                {
+                    case '/':
+                        this.coler.color = 'black'
+                        this.coler2.color = ''
+                        this.coler3.color = ''
+                        this.coler4.color = ''
+                        break;
+                    case '/cart':
+                        this.coler.color = ''
+                        this.coler2.color = ''
+                        this.coler3.color = 'black'
+                        this.coler4.color = ''
+                        break;
+                    case '/my':
+                        this.coler.color = ''
+                        this.coler2.color = ''
+                        this.coler3.color = ''
+                        this.coler4.color = 'black'
+                        break;
+                    default:
+                }
+            }
+        }
     }
 </script>
 
@@ -46,7 +90,7 @@
         /*background-color: black;*/
         div{
             p{
-                color: black;
+                color: silver;
             }
             p:nth-child(1){
                 margin-top: .05rem;
