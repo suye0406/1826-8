@@ -6,6 +6,7 @@ import ShopDetails from '@/components/public/shopDetails/shopDetails'
 import Serach_list from '@/components/public/serach_list'
 import My from '@/components/my/my'
 import Cart from '@/components/cart/cart'
+import Pay from '@/components/public/pay/pay'
 
 Vue.use(Router)
 
@@ -49,12 +50,25 @@ export default new Router({
         component: Serach_list
     },{
         path: '/my',
-        name: 'my',
+        name: 'My',
         component: My
     },{
         path: '/cart',
         name: 'cart',
         component: Cart
-    },
+    },{
+        path: '/pay',
+        name: 'Pay',
+        component: Pay
+    },{
+          path: '/personal',
+          name: 'personal',
+          component: () => import('@/components/my/personal')
+      },{
+          path: '/newAddress',
+          name: 'newAddress',
+          component: () => import('@/components/public/address/newAddress')
+      },
+
   ]
 })

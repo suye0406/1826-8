@@ -19,8 +19,12 @@
     },
     components:{
       Footer
-
-    }
+    },
+    // watch:{
+    //   $route(to,from){
+    //     console.log(to.path);
+    //   }
+    // },
   }
 </script>
 

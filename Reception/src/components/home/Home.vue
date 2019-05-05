@@ -12,9 +12,13 @@
     import Banner from "./banner";
     import Today from "./today";
     import New from "./new";
+    import axios from 'axios';
+
     export default {
         name: "Home",
-        components: {New, Today, Banner, Header}
+        components: {New, Today, Banner, Header},
+        created() {
+        }
     }
 </script>
 

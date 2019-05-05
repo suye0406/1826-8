@@ -82,6 +82,7 @@
             margin: 0 auto;
             overflow: auto;
             /*background-color: black;*/
+            overflow-y: hidden;
             div:nth-child(1){
                 /*display: flex;*/
                 /*justify-content: space-around;*/

@@ -73,7 +73,34 @@
                     default:
                 }
             }
-        }
+        },
+        watch:{
+            $route(to,from){
+                console.log(to.path);
+                switch(to.path)
+                {
+                    case '/':
+                        this.coler.color = 'black'
+                        this.coler2.color = ''
+                        this.coler3.color = ''
+                        this.coler4.color = ''
+                        break;
+                    case '/cart':
+                        this.coler.color = ''
+                        this.coler2.color = ''
+                        this.coler3.color = 'black'
+                        this.coler4.color = ''
+                        break;
+                    case '/my':
+                        this.coler.color = ''
+                        this.coler2.color = ''
+                        this.coler3.color = ''
+                        this.coler4.color = 'black'
+                        break;
+                    default:
+                }
+            }
+        },
     }
 </script>
 
@@ -81,13 +108,14 @@
     #Footer{
         width: 100%;
         height: .46rem;
-        background-color: #ffffff;
         display: flex;
         justify-content: space-between;
         position: fixed;
         bottom: 0px;
         box-shadow: .01rem .01rem .01rem .01rem;
         /*background-color: black;*/
+        background-color: white;
+        z-index: 9;
         div{
             p{
                 color: silver;

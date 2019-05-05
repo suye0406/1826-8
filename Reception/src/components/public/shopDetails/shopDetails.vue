@@ -150,6 +150,7 @@
                 content:'',
                 spe:'',
                 isActive: -1,
+                is:'',
             }
         },
         created() {
@@ -169,6 +170,7 @@
             // http://localhost:8080/api/r_new
             // http://localhost:8080/shopdetails/api/r_details?goods_id=36
             shop(){
+                // lis
                 axios.get('http://localhost:8082/r_details', {
                     params: {
                         goods_id:this.goods_id,
@@ -188,9 +190,17 @@
             spec(index,item){
                 this.shopLi = item;
                 this.isActive = index;
+                this.is = index;
             },
             pay(){
-                alert('暂未开通此功能！')
+                // alert('暂未开通此功能！');
+                var a = {};
+                a = this.spec_name1[this.is];
+                // a.chebox = false
+                a.num = this.num4;
+                this.$store.commit("PAYMENT1",a);
+                // this.spec_name1[this.is]
+                this.$router.push({name:'Pay'});
             },
             shoping(){
                 if (this.shopLi == ''){
@@ -199,10 +209,9 @@
                         type: 'warning'
                     });
                 } else {
-                    console.log(this.list.goods_title)
                     this.shopLi.num = this.num4;
                     this.shopLi.goods_name = this.list.goods_title;
-                    this.shopLi.chebox = true;
+                    this.shopLi.chebox = false;
                     this.$store.dispatch('shop',this.shopLi);
                     this.$message({
                         message: '恭喜你，加入购物车成功',
@@ -238,7 +247,7 @@
         width: 100%;
         height: 100%;
         position: relative;
-        z-index: 1;
+        z-index: 10;
         /*overflow: hidden;*/
         .header{
             width: 100%;
