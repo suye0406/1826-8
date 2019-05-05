@@ -167,11 +167,11 @@
             });
         },
         methods:{
-            // http://localhost:8080/api/r_new
-            // http://localhost:8080/shopdetails/api/r_details?goods_id=36
+            // http://10.9.71.195:8080/api/r_new
+            // http://10.9.71.195:8080/shopdetails/api/r_details?goods_id=36
             shop(){
                 // lis
-                axios.get('http://localhost:8082/r_details', {
+                axios.get('http://10.9.71.195:8082/r_details', {
                     params: {
                         goods_id:this.goods_id,
                     },

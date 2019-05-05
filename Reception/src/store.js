@@ -39,7 +39,7 @@ const mutations = {
 const actions = {
     shop({commit},params){
         state.shopList.push(params);
-        axios.get('http://localhost:8082/r_shop_cart', {
+        axios.get('http://10.9.71.195:8082/r_shop_cart', {
             params: {
                 phone:'苏雨辰',
                 shoplist:params,
@@ -50,7 +50,7 @@ const actions = {
         });
     },
     lis({commit},params){
-        axios.get('http://localhost:8082/r_shoop_list', {
+        axios.get('http://10.9.71.195:8082/r_shoop_list', {
             params: {
                 phone:'苏雨辰',
             },
@@ -70,7 +70,7 @@ const actions = {
         });
     },
     addres({commit},params){
-        axios.get('http://localhost:8082/r_address', {
+        axios.get('http://10.9.71.195:8082/r_address', {
             params: {
                 username:'苏雨辰',
             },
@@ -81,7 +81,7 @@ const actions = {
         });
     },
     my({commit},params){
-        axios.get('http://localhost:8082/r_my', {
+        axios.get('http://10.9.71.195:8082/r_my', {
             params: {
                 username:'苏雨辰',
             },
@@ -97,7 +97,7 @@ const actions = {
         var b = state.addres.City;
         var c = state.addres.address;
         var d = a+''+''+""+b+''+''+c;
-        axios.get('http://localhost:8082/r_pay', {
+        axios.get('http://10.9.71.195:8082/r_pay', {
             params: {
                 username:state.addres.username,
                 addresname:'苏雨辰',
